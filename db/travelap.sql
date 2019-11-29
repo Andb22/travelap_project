@@ -15,12 +15,12 @@ CREATE TABLE cities(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   visited BOOLEAN,
-  country_id SERIAL4 REFERENCES countries(id)
+  country_id INT4 REFERENCES countries(id)
 );
 
 CREATE TABLE sites(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   visited BOOLEAN,
-  city_id SERIAL4 REFERENCES cities(id)
+  city_id INT4 REFERENCES cities(id)
 );
