@@ -29,4 +29,10 @@ def save()
   @id = result.first()['id'].to_i
 end
 
+def self.all()
+  sql = "Select * FROM sites"
+  results = SqlRunner.run(sql)
+  return results.map{|result| Site.new(result)}
+end
+
 end

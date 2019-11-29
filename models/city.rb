@@ -28,4 +28,11 @@ class City
     @id = result.first()['id'].to_i
   end
 
+  #show all
+  def self.all()
+    sql = "Select * FROM cities"
+    results = SqlRunner.run(sql)
+    return results.map{|result| Site.new(result)}
+  end
+
 end
