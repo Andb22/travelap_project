@@ -35,4 +35,24 @@ class City
     return results.map{|result| Site.new(result)}
   end
 
+  #delete
+  def self.delete_by_id(id)
+    sql = "DELETE FROM cities
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
+  #update
+  def update()
+    sql = "UPDATE cities SET(
+    name, visited
+    ) = (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [$name, $visited]
+    SqlRunner.run(sql, values)
+  end
+
 end

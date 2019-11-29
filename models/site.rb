@@ -29,10 +29,19 @@ def save()
   @id = result.first()['id'].to_i
 end
 
+#show all
 def self.all()
   sql = "Select * FROM sites"
   results = SqlRunner.run(sql)
   return results.map{|result| Site.new(result)}
+end
+
+#delete
+def self.delete_by_id(id)
+  sql = "DELETE FROM sites
+  WHERE id = $1"
+  values = [id]
+  SqlRunner.run(sql, values)
 end
 
 end

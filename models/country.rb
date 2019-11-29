@@ -33,4 +33,11 @@ class Country
     return results.map{|result| Site.new(result)}
   end
 
+  #delete
+  def self.delete_by_id(id)
+    sql = "DELETE FROM countries
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
 end
