@@ -2,6 +2,9 @@ require( 'pg' )
 
 class SqlRunner
 
+# connects to database, prepares the sql query and then executes.
+# returns result as long as the database exists.
+
   def self.run( sql, values = [] )
     begin
       db = PG.connect({ dbname: 'travelap', host: 'localhost' })
