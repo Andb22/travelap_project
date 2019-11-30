@@ -2,3 +2,26 @@
 
 
 <li class="menu-item"><a href='/'>Home </a></li>
+
+
+<form method="POST" action="/countries">
+  <div class="form-wrap">
+
+    <div>
+      <label for="name">Country Name:</label>
+      <input type="text" name="name" id="country_name"/>
+    </div>
+
+    <div>
+      <label for="visit_select">Visited:</label>
+      <select required name="visit" id="visit">
+        <option v-bind:value = "true" >visited</option>
+        <option v-bind:value = "false" >Not visited</option>
+      </select>
+    </div>
+
+    <div >
+      <input type="submit" value="Add new country"/>
+    </div>
+    </div>
+</form>

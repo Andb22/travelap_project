@@ -17,3 +17,12 @@ get '/countries/not_visited' do
   @not_visited_countries = Country.show_not_visited()
   erb ( :"countries/not_visited_index" )
 end
+
+get '/countries/new_country' do
+  erb(:"countries/new_country")
+end
+
+post '/countries' do
+  Country.new(params).save
+  redirect to '/countries'
+end
