@@ -32,7 +32,7 @@ class City
   def self.all()
     sql = "Select * FROM cities"
     results = SqlRunner.run(sql)
-    return results.map{|result| Site.new(result)}
+    return results.map{|result| City.new(result)}
   end
 
   #delete
@@ -51,8 +51,21 @@ class City
       $1, $2
     )
     WHERE id = $3"
-    values = [$name, $visited]
+    values = [@name, @visited, @id]
     SqlRunner.run(sql, values)
+  end
+
+  # show visited and not visited
+  def self.show_visited()
+    sql = "SELECT * FROM cities WHERE (visited) = true"
+    results = SqlRunner.run(sql)
+    return results.map{|result| City.new(result)}
+  end
+
+  def self.show_not_visited()
+    sql = "SELECT * FROM cities WHERE (visited) = false"
+    results = SqlRunner.run(sql)
+    return results.map{|result| City.new(result)}
   end
 
 end

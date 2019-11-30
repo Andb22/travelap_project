@@ -44,4 +44,29 @@ def self.delete_by_id(id)
   SqlRunner.run(sql, values)
 end
 
+#update
+def update()
+  sql = "UPDATE sites SET(
+  name, visited
+  ) = (
+    $1, $2
+  )
+  WHERE id = $3"
+  values = [@name, @visited, @id]
+  SqlRunner.run(sql, values)
+end
+
+# show visited and not visited
+def self.show_visited()
+  sql = "SELECT * FROM sites WHERE (visited) = true"
+  results = SqlRunner.run(sql)
+  return results.map{|result| Site.new(result)}
+end
+
+def self.show_not_visited()
+  sql = "SELECT * FROM sites WHERE (visited) = false"
+  results = SqlRunner.run(sql)
+  return results.map{|result| Site.new(result)}
+end
+
 end

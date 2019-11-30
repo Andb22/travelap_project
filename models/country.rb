@@ -30,7 +30,7 @@ class Country
   def self.all()
     sql = "Select * FROM countries"
     results = SqlRunner.run(sql)
-    return results.map{|result| Site.new(result)}
+    return results.map{|result| Country.new(result)}
   end
 
   #delete
@@ -40,4 +40,30 @@ class Country
     values = [id]
     SqlRunner.run(sql, values)
   end
+
+  #update
+  def update()
+    sql = "UPDATE countries SET(
+    name, visited
+    ) = (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@name, @visited, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  # show visited and not visited
+  def self.show_visited()
+    sql = "SELECT * FROM countries WHERE (visited) = true"
+    results = SqlRunner.run(sql)
+    return results.map{|result| Country.new(result)}
+  end
+
+  def self.show_not_visited()
+    sql = "SELECT * FROM countries WHERE (visited) = false"
+    results = SqlRunner.run(sql)
+    return results.map{|result| Country.new(result)}
+  end
+
 end
