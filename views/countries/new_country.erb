@@ -13,10 +13,10 @@
     </div>
 
     <div>
-      <label for="visit_select">Visited:</label>
-      <select required name="visit" id="visit">
-        <option v-bind:value = "true" >visited</option>
-        <option v-bind:value = "false" >Not visited</option>
+      <label for="visited">Visited:</label>
+      <select required type="boolean" name="visited" id="visited">
+        <option value=<%= true %>>visited</option>
+        <option value=<%= false %>>Not visited</option>
       </select>
     </div>
 

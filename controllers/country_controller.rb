@@ -24,5 +24,5 @@ end
 
 post '/countries' do
   Country.new(params).save
-  redirect to '/countries'
+  erb(:"/countries/country_added")
 end
