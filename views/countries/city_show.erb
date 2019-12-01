@@ -1,0 +1,9 @@
+<h1>cities are shown</h1>
+
+
+<ul>
+  <%city_list = @country.cities  %>
+<% city_list.each do |city| %>
+  <li><%= city.name %></li>
+  <% end %>
+</ul>

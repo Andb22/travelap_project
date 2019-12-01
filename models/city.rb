@@ -57,13 +57,13 @@ class City
 
   # show visited and not visited
   def self.show_visited()
-    sql = "SELECT * FROM cities WHERE (visited) = true"
+    sql = "SELECT DISTINCT name FROM cities WHERE (visited) = true"
     results = SqlRunner.run(sql)
     return results.map{|result| City.new(result)}
   end
 
   def self.show_not_visited()
-    sql = "SELECT * FROM cities WHERE (visited) = false"
+    sql = "SELECT DISTINCT name FROM cities WHERE (visited) = false"
     results = SqlRunner.run(sql)
     return results.map{|result| City.new(result)}
   end

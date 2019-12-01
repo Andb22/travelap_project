@@ -55,15 +55,30 @@ class Country
 
   # show visited and not visited
   def self.show_visited()
-    sql = "SELECT DISTINCT name FROM countries WHERE (visited) = true"
+    sql = "SELECT DISTINCT name, id FROM countries WHERE (visited) = true"
     results = SqlRunner.run(sql)
     return results.map{|result| Country.new(result)}
   end
 
   def self.show_not_visited()
-    sql = "SELECT DISTINCT name FROM countries WHERE (visited) = false"
+    sql = "SELECT DISTINCT name, id FROM countries WHERE (visited) = false"
     results = SqlRunner.run(sql)
     return results.map{|result| Country.new(result)}
   end
+
+  def self.find(id)
+    sql = "SELECT * FROM countries WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Country.new( results.first )
+  end
+
+#select all cities that have a particular country id
+  def cities()
+  sql = "SELECT cities.* FROM cities WHERE country_id = $1;"
+  values = [@id]
+  city_list = SqlRunner.run(sql, values)
+  return city_list.map{|city| City.new(city)}
+end
 
 end

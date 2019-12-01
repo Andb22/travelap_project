@@ -2,12 +2,12 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/country.rb' )
 also_reload( '../models/*' )
-require('pry')
 
 get '/countries' do
   @countries = Country.all()
   erb ( :"countries/countries_index" )
 end
+
 
 get '/countries/visited' do
   @visited_countries = Country.show_visited()
@@ -25,5 +25,11 @@ end
 
 post '/countries' do
   Country.new(params).save
-  erb(:"/countries/country_added")
+  erb(:"countries/country_added")
+end
+
+
+get '/countries/visited/:id' do
+  @country = Country.find(params['id'].to_i)
+  erb(:"/countries/city_show")
 end
