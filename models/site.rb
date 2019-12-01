@@ -63,7 +63,7 @@ def self.show_visited()
   return results.map{|result| Site.new(result)}
 end
 
-def self.show_not_visited()
+def self.show_notvisited()
   sql = "SELECT * FROM sites WHERE (visited) = false"
   results = SqlRunner.run(sql)
   return results.map{|result| Site.new(result)}

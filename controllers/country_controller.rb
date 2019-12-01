@@ -15,8 +15,8 @@ get '/countries/visited' do
 end
 
 get '/countries/not_visited' do
-   @not_visited_countries = Country.show_not_visited()
-  erb ( :"countries/not_visited_index" )
+   @notvisited_countries = Country.show_notvisited()
+  erb ( :"countries/notvisited_index" )
 end
 
 get '/countries/new_country' do

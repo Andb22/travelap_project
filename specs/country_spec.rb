@@ -28,7 +28,7 @@ def test_list_of_not_visited_countries
     'name' => 'Japan',
     'visited' => true
   })
-  country_list = Country.show_not_visited
+  country_list = Country.show_notvisited
   assert_equal(2, country_list.length)
 end
 

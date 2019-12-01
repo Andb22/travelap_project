@@ -13,9 +13,9 @@ get '/cities/visited' do
   erb ( :"cities/visited_index" )
 end
 
-get '/countries/not_visited' do
-   @not_visited_cities = City.show_not_visited()
-  erb ( :"cities/not_visited_index" )
+get '/cities/not_visited' do
+   @not_visited_cities = City.show_notvisited()
+  erb ( :"cities/notvisited_index" )
 end
 
 get '/cities/new_city' do
