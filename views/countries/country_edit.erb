@@ -1,14 +1,14 @@
 
 <li class="menu-item"><a href='/'>Home </a></li>
 
-<h2>Edit <%= @country.name %></h2>
+<h2>Edit <%= @country.name.capitalize%></h2>
 
 <form method="POST" action="/countries/visited/<%= @country.id %>">
   <div class="form-wrap">
 
     <div>
       <label for="name">Country Name:</label>
-      <input type="text" name="name" minlength="2" id="country_name" value="<%= @country.name %>"/>
+      <input required type="text" name="name" minlength="2" id="country_name" value="<%= @country.name %>"/>
     </div>
 
     <div>
