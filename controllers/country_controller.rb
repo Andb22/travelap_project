@@ -33,3 +33,14 @@ get '/countries/visited/:id' do
   @country = Country.find(params['id'].to_i)
   erb(:"/countries/city_show")
 end
+
+get '/countries/visited/:id/edit' do
+    @country = Country.find(params['id'].to_i)
+  erb(:"countries/country_edit")
+end
+
+post '/countries/visited/:id' do
+  country = Country.new(params)
+  country.update
+  erb (:"countries/country_edited")
+end
