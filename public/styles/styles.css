@@ -4,3 +4,8 @@ body {
   background-repeat: no-repeat;
   height: 100%;
 }
+
+.menu-item {
+  color: #FFFFFF;
+  background-color: #A4B0F5;
+}
