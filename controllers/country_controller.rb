@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/country.rb' )
 also_reload( '../models/*' )
+require('pry')
 
 get '/countries' do
   @countries = Country.all()
@@ -14,7 +15,7 @@ get '/countries/visited' do
 end
 
 get '/countries/not_visited' do
-  @not_visited_countries = Country.show_not_visited()
+   @not_visited_countries = Country.show_not_visited()
   erb ( :"countries/not_visited_index" )
 end
 

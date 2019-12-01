@@ -15,5 +15,22 @@ def test_name_of_country
   assert_equal('Australia', country1.name)
 end
 
+def test_list_of_not_visited_countries
+  country1 = Country.new({
+    'name' => 'Australia',
+    'visited' => true
+  })
+  country2 = Country.new({
+    'name' => 'Australia',
+    'visited' => true
+  })
+  country3 = Country.new({
+    'name' => 'Japan',
+    'visited' => true
+  })
+  country_list = Country.show_not_visited
+  assert_equal(2, country_list.length)
+end
+
 
 end

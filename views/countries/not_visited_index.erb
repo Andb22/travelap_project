@@ -1,3 +1,5 @@
+
+
 <h1>NOT VISITED COUNTRY LIST</h1>
 
 <p>
@@ -7,3 +9,10 @@
 </p>
 
 <li class="menu-item"><a href='/'>Home </a></li>
+
+
+<ul>
+  <%@not_visited_countries.each do |country| %>
+  <li><%= country.name %></li>
+  <% end %>
+</ul>

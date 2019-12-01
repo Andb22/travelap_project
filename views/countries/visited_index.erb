@@ -7,3 +7,9 @@
 </p>
 
 <li class="menu-item"><a href='/'>Home </a></li>
+
+<ul>
+  <%@visited_countries.each do |country| %>
+  <li><%= country.name %></li>
+  <% end %>
+</ul>
