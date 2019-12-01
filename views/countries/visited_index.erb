@@ -12,7 +12,7 @@
 
 <ul>
   <%@visited_countries.each do |country| %>
-  <li><a href="/countries/visited/<%= country.id  %>"> <%= country.name %><%="  "%></a>Î
+  <li><a href="/countries/visited/<%= country.id  %>"> <%= country.name.capitalize %><%="  "%></a>Î
   <a href="/countries/visited/<%= country.id  %>/edit"> Edit country</a></li>Î
   <% end %>
 </ul>

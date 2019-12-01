@@ -4,6 +4,6 @@
 <ul>
   <%city_list = @country.cities  %>
 <% city_list.each do |city| %>
-  <li><%= city.name %></li>
+  <li><%= city.name.capitalize %></li>
   <% end %>
 </ul>
