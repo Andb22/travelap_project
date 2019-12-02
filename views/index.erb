@@ -13,5 +13,13 @@
 <li class="menu-item"><a href='/countries/visited'>Countries I have Visited </a></li>
 <li class="menu-item"><a href='/countries/not_visited'>Countries I have not Visited</a></li>
 <li class="menu-item"><a href='/countries/new_country'>Add new Country</a></li>
+
+<form method="POST" action="/countries_search">
+<div>
+  <label for="name">Search for country:</label>
+  <input required type="text" name="name" minlength="3" id="country_name"/>
+  <input type="submit" value="Search for country"/>
+</div>
+</form>
 </nav>
 </body>

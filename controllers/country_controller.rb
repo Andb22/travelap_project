@@ -24,8 +24,14 @@ get '/countries/new_country' do
 end
 
 post '/countries' do
-  Country.new(params).save
+  @country = Country.new(params)
+  @country.save
   erb(:"countries/country_added")
+end
+
+post '/countries_search' do
+  @country = Country.search(params['name'])
+  erb(:"countries/city_show")
 end
 
 
@@ -42,5 +48,44 @@ end
 post '/countries/visited/:id' do
   country = Country.new(params)
   country.update
+  @country = country
   erb (:"countries/country_edited")
+end
+
+post '/countries/visited/:id/delete' do
+  country = Country.find(params['id'])
+  country.delete()
+  erb (:"countries/country_deleted")
+end
+
+
+
+get '/countries/not_visited/:id' do
+  @country = Country.find(params['id'].to_i)
+  erb(:"/countries/city_show")
+end
+
+get '/countries/not_visited/:id/edit' do
+    @country = Country.find(params['id'].to_i)
+  erb(:"countries/country_edit")
+end
+
+post '/countries/not_visited/:id' do
+  country = Country.new(params)
+  country.update
+  @country = country
+  erb (:"countries/country_edited")
+end
+
+post '/countries/not_visited/:id/delete' do
+  country = Country.find(params['id'])
+  country.delete()
+  erb (:"countries/country_deleted")
+end
+
+
+
+get '/countries/city_show/:id' do
+  @country = Country.find(params['id'].to_i)
+  erb(:"/cities/new_city")
 end

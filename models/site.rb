@@ -37,6 +37,13 @@ def self.all()
 end
 
 #delete
+
+def delete()
+  sql = "DELETE from sites WHERE id = $1;"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
+
 def self.delete_by_id(id)
   sql = "DELETE FROM sites
   WHERE id = $1"
@@ -67,6 +74,13 @@ def self.show_notvisited()
   sql = "SELECT * FROM sites WHERE (visited) = false"
   results = SqlRunner.run(sql)
   return results.map{|result| Site.new(result)}
+end
+
+def self.find(id)
+  sql = "SELECT * FROM sites WHERE id = $1;"
+  values = [id]
+  results = SqlRunner.run( sql, values )
+  return Site.new( results.first )
 end
 
 end

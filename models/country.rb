@@ -34,6 +34,12 @@ class Country
   end
 
   #delete
+  def delete()
+    sql = "DELETE from countries WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_by_id(id)
     sql = "DELETE FROM countries
     WHERE id = $1"
@@ -81,4 +87,9 @@ class Country
   return city_list.map{|city| City.new(city)}
 end
 
+  def self.search(name)
+    sql = "SELECT * FROM countries WHERE name LIKE '%$1%';"
+    values = [name]
+    country_match = SqlRunner.run(sql, values)
+  end
 end

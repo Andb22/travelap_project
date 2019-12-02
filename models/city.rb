@@ -22,7 +22,7 @@ class City
     VALUES (
       $1, $2, $3
       )
-      RETURNING id"
+      RETURNING id;"
     values = [@name, @visited, @country_id]
     result = SqlRunner.run(sql, values)
     @id = result.first()['id'].to_i
@@ -30,12 +30,18 @@ class City
 
   #show all
   def self.all()
-    sql = "Select * FROM cities"
+    sql = "Select * FROM cities;"
     results = SqlRunner.run(sql)
     return results.map{|result| City.new(result)}
   end
 
   #delete
+  def delete()
+    sql = "DELETE from cities WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_by_id(id)
     sql = "DELETE FROM cities
     WHERE id = $1"
@@ -57,15 +63,30 @@ class City
 
   # show visited and not visited
   def self.show_visited()
-    sql = "SELECT DISTINCT name FROM cities WHERE (visited) = true"
+    sql = "SELECT DISTINCT name, id FROM cities WHERE (visited) = true"
     results = SqlRunner.run(sql)
     return results.map{|result| City.new(result)}
   end
 
   def self.show_notvisited()
-    sql = "SELECT DISTINCT name FROM cities WHERE (visited) = false"
+    sql = "SELECT DISTINCT name, id FROM cities WHERE (visited) = false"
     results = SqlRunner.run(sql)
     return results.map{|result| City.new(result)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM cities WHERE id = $1;"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return City.new( results.first )
+  end
+
+  #select all tourist sites that have a particular city id
+    def sites()
+    sql = "SELECT sites.* FROM sites WHERE city_id = $1;"
+    values = [@id]
+    site_list = SqlRunner.run(sql, values)
+    return site_list.map{|site| Site.new(site)}
   end
 
 end
