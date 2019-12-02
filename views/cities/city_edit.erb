@@ -1,19 +1,14 @@
-<h1>NEW CITY </h1>
-
 
 <li class="menu-item"><a href='/'>Home </a></li>
 
-<form method="POST" action="/cities">
+<h2>Edit <%= @city.name.capitalize%></h2>
+
+<form method="POST" action="/cities/visited/<%= @city.id %>">
   <div class="form-wrap">
 
     <div>
-      <label for="country_id" name ="country_id"><%=@country.name.capitalize %> </label>
-      <input required type="radio" name ="country_id" value="<%=@country.id %>" checked/>
-    </div>
-
-    <div>
       <label for="name">City Name:</label>
-      <input required type="text" name="name" minlength="3" id="city_name"/>
+      <input required type="text" name="name" minlength="2" id="city_name" value="<%= @city.name %>"/>
     </div>
 
     <div>
@@ -25,7 +20,10 @@
     </div>
 
     <div >
-      <input type="submit" value="Add city"/>
+      <input type="submit" value="Edit city"/>
     </div>
     </div>
 </form>
+
+<form action="/cities/visited/<%= @city.id %>/delete" method="POST">
+  <input type="submit" value="Delete city"></form>
