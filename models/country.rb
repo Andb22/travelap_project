@@ -88,8 +88,9 @@ class Country
 end
 
   def self.search(name)
-    sql = "SELECT * FROM countries WHERE name LIKE '%$1%';"
+    sql = "SELECT * FROM countries WHERE name LIKE $1;"
     values = [name]
     country_match = SqlRunner.run(sql, values)
+    return Country.new(country_match.first)
   end
 end
