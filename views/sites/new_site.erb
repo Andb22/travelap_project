@@ -2,3 +2,37 @@
 
 
 <li class="menu-item"><a href='/'>Home </a></li>
+
+
+
+<form method="POST" action="/sites">
+  <div class="form-wrap">
+
+    <div>
+      <label for="city_id" name ="city_id"><%=@city.name.capitalize %> </label>
+      <input required type="radio" name ="city_id" value="<%=@city.id %>" checked/>
+    </div>
+
+    <div>
+      <label for="name">Tourist Site Name:</label>
+      <input required type="text" name="name" minlength="3" id="site_name"/>
+    </div>
+
+    <div>
+      <label for="visited">Visited:</label>
+      <select required type="boolean" name="visited" id="visited">
+        <option value=<%= true %>>visited</option>
+        <option value=<%= false %>>Not visited</option>
+      </select>
+    </div>
+
+    <div >
+      <input type="submit" value="Add tourist site"/>
+    </div>
+    </div>
+</form>
+
+<form>
+  Add your own photo of this tourist site.
+  Select a file: <input type="file" name="myFile">
+</form>

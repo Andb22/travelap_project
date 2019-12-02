@@ -1,9 +1,34 @@
-<h1>cities are shown</h1>
+<h1>Cities in <%= @country.name.capitalize %></h1>
 
+<div class="menu-item">
+<li class="menu-item"><a href='/'>Home </a></li>
 
-<ul>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>visited</th>
+  </tr>
   <%city_list = @country.cities  %>
 <% city_list.each do |city| %>
-  <li><%= city.name.capitalize %></li>
+<tr>
+  <td><%= city.name.capitalize %></td>
+  <td>|</td>
+  <td><% if (city.visited) == "t" %>
+          <p>Yes</p>
+          <%end%>
+          <% if city.visited == "f"%>
+          <p>Not yet</p>
+          <%end%>
+  </td>
+  <td>|</td>
+  <td><a href="/cities/<%= city.id  %>/edit"> Edit city</a></td>Î
+  <td>|</td>
+  <td><a href="/cities/<%= city.id  %>/edit_site"> Tourist Sites in city</a></td>Î
+</tr>
   <% end %>
-</ul>
+</table>
+
+<li class="menu-item">
+  <a href='/cities/new_city/<%= @country.id %>'>Add new City</a></li>
+</div>

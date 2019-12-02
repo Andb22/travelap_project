@@ -1,0 +1,29 @@
+
+<li class="menu-item"><a href='/'>Home </a></li>
+
+<h2>Edit <%= @site.name.capitalize%></h2>
+
+<form method="POST" action="/sites/<%= @site.id %>/edit">
+  <div class="form-wrap">
+
+    <div>
+      <label for="name">Site Name:</label>
+      <input required type="text" name="name" minlength="2" id="site_name" value="<%= @site.name %>"/>
+    </div>
+
+    <div>
+      <label for="visited">Visited:</label>
+      <select required type="boolean" name="visited" id="visited">
+        <option value=<%= true %>>visited</option>
+        <option value=<%= false %>>Not visited</option>
+      </select>
+    </div>
+
+    <div >
+      <input type="submit" value="Edit site"/>
+    </div>
+    </div>
+</form>
+
+<form action="/sites/<%= @site.id %>/delete" method="POST">
+  <input type="submit" value="Delete site"></form>

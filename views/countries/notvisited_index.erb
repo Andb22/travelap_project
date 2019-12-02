@@ -2,10 +2,12 @@
 
 <p>
 <li class="menu-item"><a href="/">Home </a></li>
+<li class="menu-item"><a href='/countries/visited'>Countries I have Visited</a></li>
 </p>
 
 <ul>
   <%@notvisited_countries.each do |country| %>
-  <li><%= country.name.capitalize %></li>
+  <li><a href="/countries/not_visited/<%= country.id  %>"><%= country.name.capitalize %>
+  <a href="/countries/not_visited/<%= country.id  %>/edit"> Edit country</a></li>
   <% end %>
 </ul>

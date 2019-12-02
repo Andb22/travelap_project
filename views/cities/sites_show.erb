@@ -1,0 +1,35 @@
+<h1>Tourist Sites in <%= @city.name.capitalize %></h1>
+
+<div class="menu-item">
+<li class="menu-item"><a href='/'>Home </a></li>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>visited</th>
+  </tr>
+  <%site_list = @city.sites  %>
+<% site_list.each do |site| %>
+<tr>
+  <td><%= site.name.capitalize %></td>
+  <td>|</td>
+  <td><% if (site.visited) == "t" %>
+          <p>Yes</p>
+          <%end%>
+          <% if (site.visited) == "f"%>
+          <p>Not yet</p>
+          <%end%>
+  </td>
+  <td>|</td>
+  <td><a href="/sites/<%= site.id  %>/edit"> Edit Tourist Site</a></td>Î
+  <td>|</td>Î
+</tr>
+  <% end %>
+</table>
+
+
+<li class="menu-item">
+  <a href='/sites/new_site/<%= @city.id %>'>Add new Tourist Site</a></li>
+</div>
