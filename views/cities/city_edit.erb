@@ -3,7 +3,7 @@
 
 <h2>Edit <%= @city.name.capitalize%></h2>
 
-<form method="POST" action="/cities/visited/<%= @city.id %>">
+<form method="POST" action="/cities/<%= @city.id %>/edit">
   <div class="form-wrap">
 
     <div>
@@ -25,5 +25,5 @@
     </div>
 </form>
 
-<form action="/cities/visited/<%= @city.id %>/delete" method="POST">
+<form action="/cities/<%= @city.id %>/delete" method="POST">
   <input type="submit" value="Delete city"></form>
