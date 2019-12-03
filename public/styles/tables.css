@@ -20,7 +20,7 @@ tbody {
 
 td, th {
   text-align: center;
-  font-size: 2em;
+  font-size: 0.8em;
 }
 
 td {
@@ -39,5 +39,9 @@ th {
   display: flex;
  justify-content: center;
  align-items: center;
- font-size: 2em;
+ font-size: 1.6em;
+}
+
+form label {
+  font-size: 20px;
 }
