@@ -29,6 +29,11 @@ get '/cities/:id/edit' do
   erb(:"cities/city_edit")
 end
 
+get '/cities/:id/notvisited_edit' do
+    @city = City.find(params['id'].to_i)
+  erb(:"cities/city_notvisited_edit")
+end
+
 post '/cities' do
   @city = City.new(params)
   @city.save
@@ -51,4 +56,9 @@ end
 get '/cities/:id/edit_site' do
   @city = City.find(params['id'].to_i)
   erb(:"/cities/sites_show")
+end
+
+get '/cities/new_notvisited_city/:id' do
+  @country = Country.find(params['id'].to_i)
+  erb(:"cities/new_notvisited_city")
 end

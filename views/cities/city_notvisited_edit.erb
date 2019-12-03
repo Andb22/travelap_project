@@ -1,0 +1,36 @@
+
+<nav class="navbar">
+<h2 class = "logo">Travelap <em> - Where are you going to go?</em></h2>
+
+<ul class="nav-links">
+<li class="nav-item"><a href='/'>Home </a></li>
+<li class="nav-item"><a href='/countries/not_visited'>Countries I have not Visited</a></li>
+<li class="nav-item"><a href='/countries/new_country'>Add new Country</a></li>
+</ul>
+</nav>
+
+<h2>Edit <%= @city.name.capitalize%></h2>
+
+<form method="POST" action="/cities/<%= @city.id %>/edit">
+  <div class="form-wrap">
+
+    <div>
+      <label for="name">City Name:</label>
+      <input required type="text" name="name" minlength="2" id="city_name" value="<%= @city.name %>"/>
+    </div>
+
+    <div>
+      <label for="visited">Visited:</label>
+      <select required type="boolean" name="visited" id="visited">
+        <option value=<%= false %>>Not visited</option>
+      </select>
+    </div>
+
+    <div >
+      <input type="submit" value="Edit city"/>
+    </div>
+    </div>
+</form>
+
+<form action="/cities/<%= @city.id %>/delete" method="POST">
+  <input type="submit" value="Delete city"></form>

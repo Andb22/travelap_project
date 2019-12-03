@@ -62,7 +62,7 @@ end
 
 get '/countries/not_visited/:id' do
   @country = Country.find(params['id'].to_i)
-  erb(:"/countries/city_show")
+  erb(:"/countries/city_notvisited_show")
 end
 
 get '/countries/not_visited/:id/edit' do
@@ -86,4 +86,9 @@ end
 get '/countries/city_show/:id' do
   @country = Country.find(params['id'].to_i)
   erb(:"/cities/new_city")
+end
+
+get '/countries/city_notvisited_show/:id' do
+  @country = Country.find(params['id'].to_i)
+  erb(:"/cities/new_notvisited_city")
 end
