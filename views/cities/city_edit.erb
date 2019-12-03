@@ -9,7 +9,7 @@
 </ul>
 </nav>
 
-<h2>Edit <%= @city.name.capitalize%></h2>
+<h2 class="logo">Edit <%= @city.name.capitalize%></h2>
 
 <form method="POST" action="/cities/<%= @city.id %>/edit">
   <div class="form-wrap">
@@ -32,6 +32,8 @@
     </div>
     </div>
 </form>
-
 <form action="/cities/<%= @city.id %>/delete" method="POST">
-  <input type="submit" value="Delete city"></form>
+  <div class="form-wrap">
+  <input type="submit" value="Delete city">
+  </div>
+  </form>

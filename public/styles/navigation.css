@@ -10,6 +10,9 @@ nav {
  justify-content: center;
  align-items: center;
   font-family: 'Indie-Flower', cursive;
+  color: #ffffff;
+    text-shadow: 1px 2px #000000;
+    
 
 }
 

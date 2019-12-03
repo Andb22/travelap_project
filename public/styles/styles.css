@@ -6,3 +6,10 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.brandlogo{
+  justify_content: center;
+  align-items: center;
+
+
+}

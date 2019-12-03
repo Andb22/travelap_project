@@ -29,3 +29,12 @@ th {
   padding: 0px 20px 10px 0px;
   border-bottom: 1px solid papayawhip;
 }
+
+.form-wrap {
+  border: 5px;
+  background-color: #A4B0F5;
+  opacity: 0.7;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
