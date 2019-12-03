@@ -1,3 +1,17 @@
+a {
+  text-decoration: none;
+
+}
+
+a:visited{
+color: blue;
+}
+
+a:hover{
+  color: pink;
+  font-size: 120%;
+}
+
 nav {
   justify-content: center;
   background-color: #A4B0F5;
@@ -12,8 +26,6 @@ nav {
   font-family: 'Indie-Flower', cursive;
   color: #ffffff;
     text-shadow: 1px 2px #000000;
-    
-
 }
 
 .nav-links {
@@ -36,11 +48,13 @@ nav {
   color: #A4B0F5;
 }
 
-
 .navbar{
   display:flex;
   justify-content: space-around;
   align-items: center;
+  border-style: ridge;
+  border-color: grey;
+  border: 5px;
 }
 
 .homelogo {

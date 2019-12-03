@@ -87,6 +87,7 @@ class Country
     return city_list.map{|city| City.new(city)}
   end
 
+  # searches through all countries for a match toa user input
   def self.search(name)
     sql = "SELECT * FROM countries WHERE name LIKE CONCAT( '%',$1::VARCHAR,'%');"
     values = [name]

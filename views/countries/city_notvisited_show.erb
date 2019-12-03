@@ -9,12 +9,19 @@
 </ul>
 </nav>
 
+<form method="POST" action="/cities_search">
+<div >
+  <input required type="text" name="name" minlength="3" id="city_name"/>
+  <input type="submit" value="Search for city"/>
+</div>
+</form>
+
 <h1 class="logo">Cities in <%= @country.name.capitalize %></h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>|</th>
     <th>visited</th>
   </tr>
   <%city_list = @country.cities  %>

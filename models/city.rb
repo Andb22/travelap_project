@@ -89,6 +89,7 @@ class City
     return site_list.map{|site| Site.new(site)}
   end
 
+  # searches all the cities to see if there is a match
   def self.search(name)
     sql = "SELECT * FROM cities WHERE name LIKE CONCAT( '%',$1::VARCHAR,'%');"
     values = [name]
