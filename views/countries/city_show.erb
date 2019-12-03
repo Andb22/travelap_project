@@ -9,12 +9,19 @@
 </ul>
 </nav>
 
-<h1>Cities in <%= @country.name.capitalize %></h1>
+<form method="POST" action="/cities_search">
+<div >
+  <input required type="text" name="name" minlength="3" id="city_name"/>
+  <input type="submit" value="Search for city"/>
+</div>
+</form>
+
+<h1 class="logo">Cities in <%= @country.name.capitalize %></h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>|</th>
     <th>visited</th>
   </tr>
   <%city_list = @country.cities  %>
@@ -30,7 +37,7 @@
           <%end%>
   </td>
   <td>|</td>
-  <td><a href="/cities/<%= city.id  %>/edit"> Edit city</a></td>Î
+  <td><a href="/cities/<%= city.id  %>/edit"> Edit city</a></td>
   <td>|</td>
   <td><a href="/cities/<%= city.id  %>/edit_site"> Tourist Sites in city</a></td>
 </tr>

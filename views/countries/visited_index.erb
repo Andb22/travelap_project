@@ -9,13 +9,21 @@
 </ul>
 </nav>
 
+<form method="POST" action="/countries_search">
+<div >
+  <input required type="text" name="name" minlength="3" id="country_name"/>
+  <input type="submit" value="Search for country"/>
+</div>
+</form>
+
+
 <h1 class="logo">VISITED COUNTRY LIST</h1>
 
 <table class="tables">
   <%@visited_countries.each do |country| %>
   <tr>
-  <td><a href="/countries/visited/<%= country.id  %>"> <%= country.name.capitalize %></a></td>Î
-  <td><a href="/countries/visited/<%= country.id  %>/edit"> Edit country</a></td>Î
+  <td><a href="/countries/visited/<%= country.id  %>" class = "hvr-float"> <%= country.name.capitalize %></a></td>
+  <td><a href="/countries/visited/<%= country.id  %>/edit"> Edit country</a></td>
 </tr>
   <% end %>
 </table>

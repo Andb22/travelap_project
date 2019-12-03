@@ -67,3 +67,8 @@ get '/cities/:id/edit_notvisited_site' do
   @city = City.find(params['id'].to_i)
   erb(:"/cities/sites_notvisited_show")
 end
+
+post '/cities_search' do
+  @city = City.search(params['name'])
+  erb(:"cities/city_search")
+end

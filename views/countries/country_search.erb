@@ -9,7 +9,7 @@
 </nav>
 
 <% if @country == nil%>
-<h1> country has not been found</h1>
+<h1 class="logo"> country has not been found</h1>
 <% else %>
-<h1><a href="/countries/visited/<%= @country.id %>"> <%= p @country.name.capitalize%> </a>has been found</h1>
+<h1 class="logo"><a href="/countries/visited/<%= @country.id %>"> <%= p @country.name.capitalize%> </a>has been found</h1>
 <%end %>

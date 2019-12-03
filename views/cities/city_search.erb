@@ -1,0 +1,15 @@
+<nav class="navbar">
+<h2 class = "logo">Travelap <em> - Where are you going to go?</em></h2>
+
+<ul class="nav-links">
+  <li class="nav-item"><a href='/'>Home </a></li>
+<li class="nav-item"><a href='/countries/visited'>Countries I have Visited </a></li>
+<li class="nav-item"><a href='/countries/not_visited'>Countries I have not Visited</a></li>
+</ul>
+</nav>
+
+<% if @city == nil%>
+<h1 class="logo"> city has not been found</h1>
+<% else %>
+<h1 class="logo"><a href="/countries/visited/<%= @country.id %>"> <%= p @city.name.capitalize%> </a>has been found</h1>
+<%end %>

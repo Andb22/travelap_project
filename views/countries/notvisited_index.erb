@@ -8,7 +8,14 @@
 </ul>
 </nav>
 
-<h1>NOT VISITED COUNTRY LIST</h1>
+<form method="POST" action="/countries_search">
+<div >
+  <input required type="text" name="name" minlength="3" id="country_name"/>
+  <input type="submit" value="Search for country"/>
+</div>
+</form>
+
+<h1 class="logo">NOT VISITED COUNTRY LIST</h1>
 
 <table>
   <%@notvisited_countries.each do |country| %>

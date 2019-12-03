@@ -1,13 +1,16 @@
 nav {
-  justify-content: space-around;
+  justify-content: center;
   background-color: #A4B0F5;
   padding-left: 30px;
   padding-right: 30px;
 }
 
 .logo {
-  display: inline-block;
+  display: flex;
+ justify-content: center;
+ align-items: center;
   font-family: 'Indie-Flower', cursive;
+
 }
 
 .nav-links {

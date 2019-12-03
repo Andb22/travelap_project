@@ -1,12 +1,20 @@
 table {
   border: 5px;
-  color: #A4B0F5;
+  background-color: #A4B0F5;
+  opacity: 0.7;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+
+}
+tbody {
+  background-color: #A4B0F5;
 }
 
 .tables {
   padding: 10px 10px;
   border: 5px;
-  color: #A4B0F5;
+  background-color: #A4B0F5;
 }
 
 td, th {
