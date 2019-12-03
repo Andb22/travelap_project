@@ -38,3 +38,9 @@ post '/sites/:id/delete' do
   site.delete()
   erb (:"sites/site_deleted")
 end
+
+post '/sites/:id/photo' do
+  site = Site.find(params['id'])
+  site.photo()
+  erb (:"sites/photo")
+end

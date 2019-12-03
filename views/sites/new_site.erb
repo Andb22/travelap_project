@@ -39,7 +39,9 @@
     </div>
 </form>
 
-<form>
+<form method="POST" action="/sites/photo">
+    <div class="form-wrap">
   Add your own photo of this tourist site.
-  Select a file: <input type="file" name="myFile">
+  Select a file: <input multiple type="file" id="mypics" name="mypics[]" accept="image/png, image/jpeg">
+  </div>
 </form>

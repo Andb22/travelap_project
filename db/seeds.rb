@@ -48,5 +48,6 @@ site4 = Site.new({'name' => 'Harbour Bridge', 'visited' => true,
   site3.save()
   site4.save()
 
+
   binding.pry
   nil
