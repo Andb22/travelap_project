@@ -1,3 +1,14 @@
+table {
+  border: 5px;
+  color: #A4B0F5;
+}
+
+.tables {
+  padding: 10px 10px;
+  border: 5px;
+  color: #A4B0F5;
+}
+
 td, th {
   text-align: center;
 }
@@ -9,8 +20,4 @@ td {
 th {
   padding: 0px 20px 10px 0px;
   border-bottom: 1px solid papayawhip;
-}
-
-table {
-  border-collapse: collapse;
 }

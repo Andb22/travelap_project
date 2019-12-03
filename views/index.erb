@@ -1,25 +1,23 @@
 
-<body>
+<nav class="navbar">
+<h2 class = "logo">Travelap <em> - Where are you going to go?</em></h2>
 
+<ul class="nav-links">
+<li class="nav-item"><a href='/countries/visited'>Countries I have Visited </a></li>
+<li class="nav-item"><a href='/countries/not_visited'>Countries I have not Visited</a></li>
+<li class="nav-item"><a href='/countries/new_country'>Add new Country</a></li>
+</ul>
 
-<h1>Travelap home page</h1>
-
-
-<p>Where are you going to go?</p>
-
-<nav id="menu">
-
-
-<li class="menu-item"><a href='/countries/visited'>Countries I have Visited </a></li>
-<li class="menu-item"><a href='/countries/not_visited'>Countries I have not Visited</a></li>
-<li class="menu-item"><a href='/countries/new_country'>Add new Country</a></li>
-
-<form method="POST" action="/countries_search">
+</nav>
 <div>
-  <label for="name">Search for country:</label>
+  <img src="images/Travelap.svg"></img>
+</div>
+
+<footer class = "footer">
+<form method="POST" action="/countries_search">
+<div >
   <input required type="text" name="name" minlength="3" id="country_name"/>
   <input type="submit" value="Search for country"/>
 </div>
 </form>
-</nav>
-</body>
+</footer>

@@ -1,0 +1,50 @@
+nav {
+  justify-content: space-around;
+  background-color: #A4B0F5;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.logo {
+  display: inline-block;
+  font-family: 'Indie-Flower', cursive;
+}
+
+.nav-links {
+  list-style: none;
+  display:flex;
+}
+
+.nav-item a {
+  display: inline-block;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-item:hover {
+  background-color: white;
+}
+
+.nav-item:hover a {
+  color: #A4B0F5;
+}
+
+
+.navbar{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.homelogo {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Indie-Flower', cursive;
+  /* padding: 150px; */
+}
+
+path{
+  fill: transparent;
+}

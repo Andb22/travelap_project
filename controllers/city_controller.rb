@@ -4,10 +4,10 @@ require_relative( '../models/city' )
 require_relative( '../models/country' )
 also_reload( '../models/*' )
 
-get '/cities' do
-  @cities = City.all()
-  erb ( :"cities/cities_index" )
-end
+# get '/cities' do
+#   @cities = City.all()
+#   erb ( :"cities/cities_index" )
+# end
 
 get '/cities/visited' do
   @visited_cities = City.show_visited()

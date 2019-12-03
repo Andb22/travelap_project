@@ -31,7 +31,7 @@ end
 
 post '/countries_search' do
   @country = Country.search(params['name'])
-  erb(:"countries/city_show")
+  erb(:"countries/country_search")
 end
 
 
@@ -82,8 +82,6 @@ post '/countries/not_visited/:id/delete' do
   country.delete()
   erb (:"countries/country_deleted")
 end
-
-
 
 get '/countries/city_show/:id' do
   @country = Country.find(params['id'].to_i)
