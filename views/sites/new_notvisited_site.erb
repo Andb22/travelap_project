@@ -1,0 +1,45 @@
+<nav class="navbar">
+<h2 class = "logo">Travelap <em> - Where are you going to go?</em></h2>
+
+<ul class="nav-links">
+<li class="nav-item"><a href='/'>Home </a></li>
+<li class="nav-item"><a href='/countries/not_visited'>Countries I have not Visited</a></li>
+<li class="nav-item"><a href='/countries/new_country'>Add new Country</a></li>
+</ul>
+</nav>
+
+
+<h1>NEW SITE </h1>
+
+
+<form method="POST" action="/sites">
+  <div class="form-wrap">
+
+    <div>
+      <label for="city_id" name ="city_id"><%=@city.name.capitalize %> </label>
+      <input required type="radio" name ="city_id" value="<%=@city.id %>" checked/>
+    </div>
+
+    <div>
+      <label for="name">Tourist Site Name:</label>
+      <input required type="text" name="name" minlength="3" id="site_name"/>
+    </div>
+
+    <div>
+      <label for="visited">Visited:</label>
+      <select required type="boolean" name="visited" id="visited">
+
+        <option value=<%= false %>>Not visited</option>
+      </select>
+    </div>
+
+    <div >
+      <input type="submit" value="Add tourist site"/>
+    </div>
+    </div>
+</form>
+
+<form>
+  Add your own photo of this tourist site.
+  Select a file: <input type="file" name="myFile">
+</form>

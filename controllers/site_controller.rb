@@ -10,6 +10,11 @@ get '/sites/new_site/:id' do
   erb(:"sites/new_site")
 end
 
+get '/sites/new_notvisited_site/:id' do
+  @city = City.find(params['id'].to_i)
+  erb(:"sites/new_notvisited_site")
+end
+
 get '/sites/:id/edit' do
     @site = Site.find(params['id'].to_i)
   erb(:"sites/site_edit")
