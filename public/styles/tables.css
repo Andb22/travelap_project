@@ -5,6 +5,7 @@ table {
   display: flex;
  justify-content: center;
  align-items: center;
+ font-size: 2em;
 
 }
 tbody {
@@ -19,6 +20,7 @@ tbody {
 
 td, th {
   text-align: center;
+  font-size: 2em;
 }
 
 td {
@@ -37,4 +39,5 @@ th {
   display: flex;
  justify-content: center;
  align-items: center;
+ font-size: 2em;
 }
