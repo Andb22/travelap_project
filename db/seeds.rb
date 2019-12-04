@@ -15,8 +15,6 @@ country4 = Country.new({'name' => 'Australia', 'visited' => true})
   country4.save()
 
 
-
-
 city1 = City.new({'name' => 'Geneva', 'visited' => true,
   'country_id' => country1.id})
 
