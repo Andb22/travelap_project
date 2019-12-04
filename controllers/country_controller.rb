@@ -25,7 +25,7 @@ end
 
 post '/countries' do
   @country = Country.new(params)
-  @country.save
+  @found = Country.find_name(params['name'])
   erb(:"countries/country_added")
 end
 

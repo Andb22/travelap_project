@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-
+require('pry')
 
 class Country
 
@@ -79,6 +79,18 @@ class Country
     return Country.new( results.first )
   end
 
+#finds if city exists in the bucket list
+  def self.find_name(name)
+    sql = "SELECT * FROM countries WHERE name = $1;"
+    values = [name]
+    results = SqlRunner.run( sql, values )
+    if results.first == nil
+      return true
+    else
+      return nil
+  end
+  end
+
   #select all cities that have a particular country id
   def cities()
     sql = "SELECT cities.* FROM cities WHERE country_id = $1;"
@@ -87,7 +99,7 @@ class Country
     return city_list.map{|city| City.new(city)}
   end
 
-  # searches through all countries for a match toa user input
+  # searches through all countries for a match to a user input
   def self.search(name)
     sql = "SELECT * FROM countries WHERE name LIKE CONCAT( '%',$1::VARCHAR,'%');"
     values = [name]

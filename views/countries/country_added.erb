@@ -9,4 +9,17 @@
 </nav>
 
 
-<h1 class="heading"> <%=@country.name.capitalize%> has been added</h1>
+<% if @found == nil%>
+<h1 class="heading"> Country is already in list</h1>
+<% else %>
+
+<%= @country.save %>
+<h1 class="heading">
+<a <% if @country.visited == 'false' %>
+  href='/cities/new_notvisited_city/<%= @country.id  %>'
+  <% else  %>
+  href='/cities/new_city/<%= @country.id  %>'
+  <% end %>>
+  <%=@country.name.capitalize%> has been added</h1>
+
+<%end %>

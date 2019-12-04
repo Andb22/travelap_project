@@ -1,6 +1,6 @@
 
 <nav class="navbar">
-<h2 class = "logo">Travelap <em> - Where are you going to go?</em></h2>
+<h2 class = "logo" >Travelap <em> - Where are you going to go?</em></h2>
 
 <ul class="nav-links">
 <li class="nav-item"><a href='/'>Home </a></li>
@@ -22,7 +22,7 @@
 <table class="tables">
   <%@visited_countries.each do |country| %>
   <tr>
-  <td><a href="/countries/visited/<%= country.id  %>" class = "hvr-float"> <%= country.name.capitalize %></a></td>
+  <td><a href="/countries/visited/<%= country.id  %>" > <%= country.name.capitalize %></a></td>
   <td><a href="/countries/visited/<%= country.id  %>/edit"> Edit country</a></td>
 </tr>
   <% end %>
