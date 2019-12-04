@@ -22,8 +22,9 @@
 <table class="tables">
   <%@visited_countries.each do |country| %>
   <tr>
-  <td><a href="/countries/visited/<%= country.id  %>" > <%= country.name.capitalize %></a></td>
+  <td> <%= country.name.capitalize %></td>
   <td><a href="/countries/visited/<%= country.id  %>/edit"> Edit country</a></td>
+  <td><a href="/countries/visited/<%= country.id  %>" >  Cities in <%= country.name.capitalize %></a></td>
 </tr>
   <% end %>
 </table>
