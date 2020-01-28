@@ -2,7 +2,7 @@ require_relative('../models/country')
 require_relative('../models/site')
 require_relative('../models/city')
 
-require('pry')
+# require('pry')
 
 country1 = Country.new({'name' => 'Switzerland', 'visited' => true})
 country2 = Country.new({'name' => 'France', 'visited' => true})
@@ -47,5 +47,5 @@ site4 = Site.new({'name' => 'Harbour Bridge', 'visited' => true,
   site4.save()
 
 
-  binding.pry
+  # binding.pry
   nil
