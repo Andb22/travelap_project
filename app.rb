@@ -7,6 +7,7 @@ require_relative('models/site')
 require_relative('./controllers/cities_controller')
 require_relative('./controllers/countries_controller')
 require_relative('./controllers/sites_controller')
+config.serve_static_files = true
 
 #homepage
 get '/' do

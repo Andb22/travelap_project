@@ -2,7 +2,7 @@ html {
   min-height:100%;
   background-position: center;
   background-color: #A4B0F5;
-  background-image: url("../images/meribel.JPG");
+  background-image: image-url("/../Public/images/meribel.JPG");
   background-size: cover;
   background-repeat: no-repeat;
 }
