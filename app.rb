@@ -8,10 +8,7 @@ require_relative('./controllers/cities_controller')
 require_relative('./controllers/countries_controller')
 require_relative('./controllers/sites_controller')
 config.serve_static_files = true
-config.cache_classes = true
-config.serve_static_assets = true
-config.assets.compile = true
-config.assets.digest = true
+
 
 #homepage
 get '/' do
